@@ -1,0 +1,24 @@
+<h2>Exercise</h2>
+
+<form #f="ngForm">
+  <table>
+    <tr *ngFor="let row of exercises; let rowIx = index ">
+      {{row.firstNumber}}
+      {{row.operator}}
+      {{row.secondNumber}}
+      <td>
+        <input id="inputResult{{rowIx}}" type="number" name="inputResult{{rowIx}}" [(ngModel)]="row.input" required />
+        <output [hidden]="!showResults" [style]="getColor(rowIx)">
+            {{row.result}}
+        </output>
+      </td>
+    </tr>
+  </table>
+
+  <div>
+    <button [disabled]="!(f.form.valid)" (click)="check()">Check</button>
+  </div>
+  <div>
+    <button (click)="refresh()">New Exercise</button>
+  </div>
+</form>

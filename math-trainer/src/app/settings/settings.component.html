@@ -1,0 +1,63 @@
+<ul>
+  <li [hidden]="!((settings.plus || settings.minus || settings.mult ||settings.div) && f.form.valid)">
+    <a routerLink="/exercise"> exercise </a>
+  </li>
+</ul>
+
+<h2>Settings</h2>
+
+<form #f="ngForm">
+  <div>
+    <label>
+      Digits to handle
+      <select name="digits" id="digits" [(ngModel)]="settings.digits">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      How many questions
+      <input
+        type="number"
+        id="questions"
+        name="questions"
+        [(ngModel)]="settings.questions"
+        min="5"
+        max="20"
+      />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      +
+      <input type="checkbox" id="plus" name="plus" [(ngModel)]="settings.plus" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      -
+      <input type="checkbox" id="minus" name="minus" [(ngModel)]="settings.minus" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      *
+      <input type="checkbox" id="mult" name="mult" [(ngModel)]="settings.mult" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      /
+      <input type="checkbox" id="div" name="div" [(ngModel)]="settings.div" />
+    </label>
+  </div>
+</form>

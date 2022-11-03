@@ -1,0 +1,17 @@
+div{
+  padding: auto;
+  margin-top: 10px;
+}
+button{
+  margin-top: 10px;
+}
+
+input.ng-invalid{
+  background-color: red;
+  color: white;
+}
+label{
+    padding: auto;
+    margin-left: 2 px;
+    font-family: sans-serif;
+}
